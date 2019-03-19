@@ -1,5 +1,5 @@
 import jsonPlaceholder from '../apis/jsonPlaceHolder';
-
+import _ from 'lodash';
 
 export const fetchPosts =   () =>
     async dispatch =>{
@@ -7,9 +7,11 @@ export const fetchPosts =   () =>
         dispatch({type:'FETCH_POSTS',payload:response.data})
     }
 
-export const fetchUser = (id)=>{
-    return async (dispatch) =>{
+export const fetchUser = (id)=> (dispatch) =>{
+    return  _fetchUser(id,dispatch);
+}
+
+const _fetchUser = _.memoize(async (id, dispatch)=>{
         const response = await jsonPlaceholder.get(`users/${id}`);
         dispatch({type:'FETCH_USER',payload:response.data})
-    }
-}
+})
