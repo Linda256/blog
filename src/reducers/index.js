@@ -1,7 +1,5 @@
 import { combineReducers } from "redux";
+import {postsReducer} from './postsReducer';
+import {userReducer} from './userReducer'
 
-const postsReducer=(state=[],action)=>{
-    return state;
-}
-
-export default combineReducers({postsReducer})
+export default combineReducers({posts:postsReducer,user:userReducer})
