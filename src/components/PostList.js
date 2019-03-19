@@ -19,9 +19,8 @@ class PostList extends React.Component{
                         <div className="description">
                             <h3>title: {post.title}</h3>
                             <p>{post.body}</p>
-                            <UserHeader userId={post.userId}/>
                         </div>
-                            
+                        <UserHeader userId={post.userId}/>
                     </div>
                 </div>
             )
