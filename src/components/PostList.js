@@ -1,5 +1,4 @@
 import React from 'react';
-import redux from 'redux';
 import {connect} from 'react-redux';
 import {fetchPostsAndUsers} from '../actions';
 
@@ -27,7 +26,9 @@ class PostList extends React.Component{
         })
     }
 
-    render(){   
+    render(){ 
+        console.log("posts:",this.props.posts);
+        console.log("props in postlist:",this.props);
         return(
             <div className="ui relaxed divided list">{this.renderList()}</div>
         )
